@@ -1,11 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { siteConfig } from '../config';
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
 <BaseLayout title={siteConfig.name}>
   <div class="index-content framed">
-    <h1 id="hello-there">Hello there!</h1>
-    <p>Welcome to my portfolio site!</p>
+    <img src={`${base}logo.png`} alt="Jonathan Sawers" width="200" height="200" />
+    <header class="index-header">
+      <h1 id="hello-there">Hello there! 👋</h1>
+      <p class="index-lead">I'm Jonathan, but you can call me Jono. I'm a passionate, young student with a knack for all things IT. I'm currently studying a Bachelor of Computer Science (Advanced) at the University of Adelaide.</p>
+    </header>
+
+    <section class="index-section">
+      <h2>Background</h2>
+      <p>My passion for technology began playing Tonka Raceway on our Windows 95 family PC with a whiny CRT. My primary school ran a Scratch programming class, which led to me spending weekends developing (very mediocre) games with a few other keen peers. When Minecraft took over the mainstream a few years later, I started learning CraftBukkit Java plugins to run servers for my mates – which later turned into a short freelancing career working with a large education company in Abu Dhabi, and a childhood idol of mine, Preston Plays.</p>
+      <p>Throughout the latter years of high school and my late teens, I got a taste of network engineering and technical support. Working with the public and private sector, I assisted on network infrastructure rollouts and general IT help callouts for a wide range of clients, further expanding my experience and love for technology. I'm now exploring opportunities in the high-frequency and quantitative trading space.</p>
+    </section>
+
+    <section class="index-section">
+      <h2>Outside of work</h2>
+      <p>I love working on cars, particularly my E46 coupe.</p>
+    </section>
+
+    <section class="index-section">
+      <h2>Get in touch</h2>
+      <p>If you're interested in working with me, or just want to know more about what I do, please don't hesitate to <a href={siteConfig.social.linkedin}>get in touch</a>.</p>
+    </section>
   </div>
 </BaseLayout>
